@@ -17,6 +17,7 @@ class TwigCore
         if (!self::$twig) {
 
             // Gestion du moteur de template
+            //la ligne du dessous il charge les dossiers systemes
             $loader = new FilesystemLoader(__DIR__ . '/../../../templates/');
             // création de l'objet $twig
 

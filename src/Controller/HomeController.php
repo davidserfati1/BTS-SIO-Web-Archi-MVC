@@ -19,6 +19,7 @@ class HomeController implements ControllerInterface
         // Obj connect Mysql -> Obj Questionnaire
         $questionnaireModel = new questionnaireModel();
 
+        // twig render = appeler le name home/home.html
         echo $twig->render('home/home.html.twig', [
             'result' => $questionnaireModel->getFechAll(),
             'visu' => false

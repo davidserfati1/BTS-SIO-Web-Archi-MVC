@@ -10,10 +10,15 @@ class FastRouteCore
     public static function getDispatcher($dispatcher) {
 
         // Fetch method and URI from somewhere
+        //declare une variable
+        //on a besoin du nom de la route
+        //On a besoin de 2 parametre
+        // il faut savoir si c un post ou un get (voir dans le index)
         $httpMethod = $_SERVER['REQUEST_METHOD'];
         $uri = $_SERVER['REQUEST_URI'];
 
         // Strip query string (?foo=bar) and decode URI
+        //
         if (false !== $pos = strpos($uri, '?')) {
             $uri = substr($uri, 0, $pos);
         }

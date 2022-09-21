@@ -16,8 +16,10 @@ class DatabaseService
     {
         if (!self::$dbConnect) {
             try {
+                //port = 3306
                 self::$dbConnect = new PDO('mysql:host=' . $_ENV["DB_HOST"] . ';port=' . $_ENV["DB_SOCKET"] . ';dbname=' . $_ENV["DB_NAME"],
                     $_ENV["DB_USER"],
+                    //$Env = variable d environement qui pointe vers un fichier .env
                     $_ENV["DB_PASSWORD"],
                     array(PDO::ATTR_PERSISTENT => false, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8')
                 );
