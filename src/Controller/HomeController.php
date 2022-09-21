@@ -2,8 +2,8 @@
 
 namespace Quizz\Controller;
 
+use Quizz\Core\View\TwigCore;
 use Quizz\Model\questionnaireModel;
-use Quizz\Service\TwigService;
 use Quizz\Core\Controller\ControllerInterface;
 
 class HomeController implements ControllerInterface
@@ -15,13 +15,10 @@ class HomeController implements ControllerInterface
 
     public function outputEvent()
     {
-        $twig = TwigService::getEnvironment();
-        // Obj connect Mysql -> Obj Questionnaire
-        $questionnaireModel = new questionnaireModel();
+        $twig = TwigCore::getEnvironment();
 
         // twig render = appeler le name home/home.html
         echo $twig->render('home/home.html.twig', [
-            'result' => $questionnaireModel->getFechAll(),
             'visu' => false
         ]);
     }

@@ -18,7 +18,8 @@
         "ext-pdo": "*"
     },
     "scripts": {
-        "start": "php -S localhost:8042 -t public",
+        "start": [  "Composer\\Config::disableProcessTimeout",
+                    "php -S localhost:8042 -t public"],
         "test": "php vendor/bin/phpunit --testdox tests"
     },
     "config": {
@@ -27,5 +28,8 @@
     "require-dev": {
         "roave/security-advisories": "dev-latest",
         "phpunit/phpunit": "^9"
+    },
+    "config": {
+        "process-timeout":0
     }
 }
