@@ -63,5 +63,13 @@ class EtudiantModel
 
     }
 
+    //Modifier etudiant
+
+    public function ModifierEtudiant(Etudiant $etudiant){
+
+        $requete = $this->bdd->prepare("UPDATE etudiants SET login ="."'$etudiant->getLogin''".",prenom ="."'$etudiant->getPrenom'". ",nom=" ."'$etudiant->getNom'" . ",email=" ."'$etudiant->getEmail'" . " WHERE idEtudiant ="."'$etudiant->getIdEtudiant");
+        $requete->execute();
+    }
+
 
 }

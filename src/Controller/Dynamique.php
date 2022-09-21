@@ -3,6 +3,7 @@
 namespace Quizz\Controller;
 
 use Quizz\Core\Controller\ControllerInterface;
+use Quizz\Core\View\TwigCore;
 use Quizz\Model\EtudiantModel;
 use Quizz\Service\TwigService;
 
@@ -21,12 +22,12 @@ class Dynamique implements ControllerInterface
     {
         // TODO: Implement outputEvent() method.
         $lesEtudiants= new EtudiantModel();
-        return TwigService::getEnvironment()->render("Dynamique.html.twig",["etudiants"=>$lesEtudiants->getAllEtudiant()]);
+        return TwigCore::getEnvironment()->render("Dynamique.html.twig",["etudiants"=>$lesEtudiants->getAllEtudiant()]);
 
 
 
 
-            return TwigService::getEnvironment()->render("Dynamique.html.twig",["etudiants"=>$lesEtudiants->getSupprimerEtudiant()]);
+            return TwigCore::getEnvironment()->render("Dynamique.html.twig",["etudiants"=>$lesEtudiants->getSupprimerEtudiant()]);
 
     }
 
